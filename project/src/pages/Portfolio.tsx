@@ -308,9 +308,10 @@ const Portfolio = () => {
               href="/contact"
               size="lg"
               variant="white"
+
             />
             <p className="text-sm text-gray-400 mt-4">
-              Only 3 founding client spots remaining
+              Only 30 founding client spots remaining
             </p>
           </motion.div>
         </div>
