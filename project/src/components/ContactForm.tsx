@@ -68,7 +68,7 @@ const ContactForm = () => {
 
 
    try {
-  const response = await fetch("https://sheetdb.io/api/v1/jqh3j47kuhl1j", {
+  const response = await fetch("https://sheetdb.io/api/v1/3gjyjczeopw10", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
