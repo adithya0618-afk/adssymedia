@@ -176,7 +176,7 @@ const Portfolio = () => {
       </section>
 
       {/* Case Studies */}
-      <section className="py-20 bg-black">
+      {/* <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -246,10 +246,10 @@ const Portfolio = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials */}
-      <section className="py-20 bg-gray-900">
+      {/* <section className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -288,7 +288,7 @@ const Portfolio = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-20 bg-black">
@@ -311,7 +311,7 @@ const Portfolio = () => {
 
             />
             <p className="text-sm text-gray-400 mt-4">
-              Only 30 founding client spots remaining
+              Only 3   founding client spots remaining
             </p>
           </motion.div>
         </div>

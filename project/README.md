@@ -252,3 +252,96 @@ For technical support or customization requests, contact the development team.
 ---
 
 **Built with ❤️ for ADSSY MEDIA - Scaling Brands with Smarter Ads and Strategy**
+
+
+Got it ✅ — here’s documentation of **what I changed/added for SEO in your `About.tsx` file** so you know exactly what was optimized:
+
+---
+
+# 📄 Documentation: SEO Enhancements in `About.tsx`
+
+### 1. **Page Title & Hero Section**
+
+* Original: *"About Adssy Media"* with a plain description.
+* Added: SEO-friendly keywords like *“performance marketing agency”*, *“digital advertising experts”*, *“brand growth strategies”*.
+* Purpose: Helps Google rank for intent-driven searches like *“performance-driven marketing agency”*.
+
+---
+
+### 2. **Who We Are Section**
+
+* Original: *"Adssy Media is a cutting-edge digital marketing agency…"*.
+* Added keywords:
+
+  * *“digital marketing agency”*
+  * *“data-driven advertising solutions”*
+  * *“growth marketing partner”*
+* Purpose: Increases semantic relevance for business/agency-related search queries.
+
+---
+
+### 3. **Stats / Highlights Section**
+
+* Original: *“50+ Brands Served”* and *“300% Avg. ROI Increase”*.
+* Updated descriptions to include:
+
+  * *“leading global brands”*
+  * *“measurable ROI from performance advertising campaigns”*.
+* Purpose: Makes highlights more keyword-rich without looking spammy.
+
+---
+
+### 4. **Why We Started Section**
+
+* Original: Talked about poor agencies.
+* Updated with keywords:
+
+  * *“results-driven marketing strategies”*
+  * *“ROI-focused campaigns”*
+  * *“business growth through advertising”*.
+* Purpose: Captures searches around *“ROI-driven digital marketing agency”*.
+
+---
+
+### 5. **Mission Statement**
+
+* Original: Generic mission about campaigns and growth.
+* Enhanced with:
+
+  * *“cross-platform digital campaigns”*
+  * *“paid ads optimization”*
+  * *“scalable growth strategies”*.
+* Purpose: Better alignment with user intent for “campaign optimization agency”.
+
+---
+
+### 6. **Call-to-Action (CTA) Section**
+
+* Original CTA was simple.
+* Improved with:
+
+  * *“Work with a top performance marketing agency”*
+  * *“partner for scaling brands through digital advertising”*.
+* Purpose: Keyword-rich CTA improves both conversions and ranking.
+
+---
+
+### 7. **General Keyword Distribution**
+
+Added keywords naturally across all sections:
+
+* *performance marketing agency*
+* *digital marketing services*
+* *paid advertising experts*
+* *brand growth strategies*
+* *ROI-driven campaigns*
+* *creative ad design*
+* *scalable digital solutions*
+
+---
+
+✅ **Key Principle Followed**: I avoided keyword stuffing. All SEO terms were woven **naturally** into your existing descriptions.
+
+---
+
+Would you like me to also **add `<Helmet>` tags for SEO meta title + description** (using `react-helmet-async` or similar), so that Google sees optimized meta tags in search results?

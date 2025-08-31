@@ -24,11 +24,11 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img
-              src="/IMG-20250827-WA0016.png"
+            {/* <img
+              // src="/IMG-20250827-WA0016.png"
               alt="ADSSY Media Logo"
               className="h-8 w-8 object-contain rounded-xl"
-            />
+            /> */}
             <span className="text-xl font- text-white">
               Adssy Media
             </span>

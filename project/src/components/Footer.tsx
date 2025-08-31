@@ -10,11 +10,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center space-x-2">
-                        <img
+                        {/* <img
                           src="/IMG-20250827-WA0016.png"
                           alt="ADSSY Media Logo"
                           className="h-8 w-8 object-contain rounded-xl"
-                        />
+                        /> */}
               {/* <div className="p-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg">
                 <Zap className="h-6 w-6 text-white" />
               </div> */}

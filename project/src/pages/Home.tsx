@@ -56,9 +56,11 @@ const Home = () => {
   <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        // initial={{ opacity: 0, y: 30 }}
+        // animate={{ opacity: 1, y: 0 }}
+        // transition={{ duration: 0.8 }}
+        initial={{ opacity: 1, y: 0 }}
+  animate={{ opacity: 1, y: 0 }}
       >
         <h1 className="text-3xl md:text-6xl font-bold font-montserrat mb-4 leading-tight">
 
@@ -126,9 +128,11 @@ const Home = () => {
   <section className="py-20 bg-black">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        // initial={{ opacity: 0, y: 30 }}
+        // whileInView={{ opacity: 1, y: 0 }}
+        // transition={{ duration: 0.8 }}
+        initial={{ opacity: 1, y: 0 }}
+  animate={{ opacity: 1, y: 0 }}
         className="text-center mb-16"
       >
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -143,9 +147,11 @@ const Home = () => {
         {features.map((feature, index) => (
           <motion.div
             key={feature.title}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: index * 0.2 }}
+            // initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+            // whileInView={{ opacity: 1, x: 0 }}
+            // transition={{ duration: 0.8, delay: index * 0.2 }}
+            initial={{ opacity: 1, y: 0 }}
+  animate={{ opacity: 1, y: 0 }}
             className="flex items-start space-x-4 group"
           >
             <div className="p-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg mt-1 group-hover:scale-110 transition-transform duration-300">
@@ -160,9 +166,11 @@ const Home = () => {
       </div>
 
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
+        // initial={{ opacity: 0, y: 30 }}
+        // whileInView={{ opacity: 1, y: 0 }}
+        // transition={{ duration: 0.8, delay: 0.4 }}
+        initial={{ opacity: 1, y: 0 }}
+  animate={{ opacity: 1, y: 0 }}
         className="text-center mt-16"
       >
         <CTAButton text="Let's Talk Growth" onClick={scrollToContact} size="lg" variant="white" />

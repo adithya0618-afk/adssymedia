@@ -91,9 +91,11 @@ const Contact = () => {
       <section className="py-20 bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            // initial={{ opacity: 0, y: 30 }}
+            // whileInView={{ opacity: 1, y: 0 }}
+            // transition={{ duration: 0.8 }}
+            initial={{ opacity: 1, y: 0 }}
+  animate={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-white mb-6">Frequently Asked Questions</h2>
@@ -121,9 +123,11 @@ const Contact = () => {
             ].map((faq, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
+                // initial={{ opacity: 0, y: 20 }}
+                // whileInView={{ opacity: 1, y: 0 }}
+                // transition={{ duration: 0.8, delay: index * 0.1 }}
+                initial={{ opacity: 1, y: 0 }}
+  animate={{ opacity: 1, y: 0 }}
                 className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6"
               >
                 <h3 className="text-lg font-semibold text-white mb-3">{faq.question}</h3>
@@ -149,7 +153,7 @@ const Contact = () => {
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
               <a
-                href="mailto:hello@adssymedia.com"
+                href="mailto:adssymedia@gmail.com"
                 className="inline-flex items-center px-8 py-4 bg-white text-black font-semibold rounded-lg transition-all duration-200 hover:bg-gray-100 hover:scale-105"
                 
               >
