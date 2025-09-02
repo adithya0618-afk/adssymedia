@@ -53,7 +53,7 @@ const Footer = () => {
                 className="flex items-center space-x-2 text-gray-400 hover:text-blue-400 transition-colors duration-200 text-sm"
               >
                 <Mail className="h-4 w-4" />
-                <span>hello@adssymedia.com</span>
+                <span>adssymedia@gmail.com</span>
               </a>
               <div className="flex space-x-3">
                 <a

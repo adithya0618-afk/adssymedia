@@ -21,19 +21,19 @@ const Portfolio = () => {
     },
     {
       icon: Users,
-      metric: "50K+",
+      metric: "3+",
       label: "Leads Generated",
       gradient: "from-purple-600 to-pink-600"
     },
     {
       icon: DollarSign,
-      metric: "$2M+",
+      metric: "$0.25M",
       label: "Revenue Driven",
       gradient: "from-green-600 to-teal-600"
     },
     {
       icon: Eye,
-      metric: "10M+",
+      metric: "50+",
       label: "Impressions Delivered",
       gradient: "from-orange-600 to-red-600"
     }
