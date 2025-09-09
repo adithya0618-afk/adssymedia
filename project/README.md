@@ -345,3 +345,51 @@ Added keywords naturally across all sections:
 ---
 
 Would you like me to also **add `<Helmet>` tags for SEO meta title + description** (using `react-helmet-async` or similar), so that Google sees optimized meta tags in search results?
+
+
+
+
+
+
+Ah, this is a common Git scenario. The message is telling you: **the remote repository has commits you don’t have locally**, so Git won’t let you push to avoid overwriting changes.
+
+Here’s how to resolve it safely:
+
+---
+
+### **Option 1: Pull and merge (recommended)**
+
+```bash
+git pull origin main --rebase
+```
+
+* This fetches remote changes and applies your local commits on top.
+* Resolve any conflicts if prompted.
+* Then push:
+
+```bash
+git push origin main
+```
+
+---
+
+### **Option 2: Force push (use only if you are sure you want to overwrite remote)**
+
+```bash
+git push origin main --force
+```
+
+* **Warning:** This will replace the remote history with your local commits. Only do this if you are the only one working on the repo.
+
+---
+
+✅ **Recommended:** Use Option 1 (`git pull --rebase`) to avoid losing remote changes.
+
+---
+
+I can also give you a **step-by-step for using SSH instead of HTTPS** so you don’t have to authenticate in your browser every time.
+
+Do you want me to provide that?
+
+Meta pixel =  is being added in index.html file in the head tag because thats where it starts running
+
