@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- <link rel="icon" type="image/png" href="/IMG-20250827-WA0016 copy.png" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ADSSY MEDIA - Scaling Brands with Smarter Ads and Strategy</title>
     <meta name="description" content="We help ambitious brands grow through paid advertising, performance marketing, and creative digital strategy. Book a free strategy call today.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-      <!-- Meta Pixel Code -->
+
+    <!-- Meta Pixel Code -->
     <script>
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -20,16 +20,19 @@
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '2001524450617'); // 🔥 Replace with your real Pixel ID
+      fbq('init', '2001524450617'); // Replace with your real Pixel ID
       fbq('track', 'PageView');
     </script>
-     
-    
+    <!-- End Meta Pixel Code -->
   </head>
-  
+
   <body>
-    
     <div id="root"></div>
+
+    <!-- Example Start Trial Buttons -->
+    <button class="start-trial">Start Trial</button>
+    <button class="start-trial">Start Free Trial</button>
+
     <noscript>
       <img
         height="1"
@@ -38,6 +41,21 @@
         src="https://www.facebook.com/tr?id=2001524450617&ev=PageView&noscript=1"
       />
     </noscript>
+
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- StartTrial Event Script -->
+    <script>
+      // Fire StartTrial when any button with class 'start-trial' is clicked
+      document.querySelectorAll('.start-trial').forEach(button => {
+        button.addEventListener('click', () => {
+          fbq('track', 'StartTrial', {
+            value: 9.99,       // Set trial value
+            currency: 'USD'    // Set your currency
+          });
+          console.log('StartTrial event fired!');
+        });
+      });
+    </script>
   </body>
 </html>

@@ -186,6 +186,7 @@ const About = () => {
               href="/contact"
               size="lg"
               variant="white"
+              trackStartTrial={true} 
             />
           </motion.div>
         </div>
