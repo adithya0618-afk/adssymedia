@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle } from 'lucide-react';
 
-
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    mobile: '',   // ✅ Added mobile field
     businessName: '',
     message: ''
   });
@@ -22,85 +22,42 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // 🔗 GOOGLE SHEETS INTEGRATION POINT
-    // Replace this entire try-catch block with your Google Sheets API call
-    // 
-    // OPTION 1: Google Sheets API
-    // const response = await fetch('/api/submit-form', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({
-    //     ...formData,
-    //     timestamp: new Date().toISOString()
-    //   })
-    // });
-    //
-    // OPTION 2: SheetDB.io
-    // const response = await fetch('https://sheetdb.io/api/v1/YOUR_SHEET_ID', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({
-    //     Name: formData.name,
-    //     Email: formData.email,
-    //     'Business Name': formData.businessName,
-    //     Message: formData.message,
-    //     Timestamp: new Date().toLocaleString()
-    //   })
-    // });
-    //
-    // OPTION 3: Zapier Webhook
-    // const response = await fetch('YOUR_ZAPIER_WEBHOOK_URL', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(formData)
-    // });
-    //
-    // After successful submission:
-    // if (response.ok) {
-    //   setIsSubmitted(true);
-    //   setFormData({ name: '', email: '', businessName: '', message: '' });
-    // } else {
-    //   throw new Error('Submission failed');
-    // }
-    
-    // 🚨 REMOVE THIS SIMULATION CODE AFTER ADDING REAL INTEGRATION
 
+    try {
+      const response = await fetch("https://sheetdb.io/api/v1/3gjyjczeopw10", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          data: [
+            {
+              Name: formData.name,
+              Email: formData.email,
+              Mobile: formData.mobile, // ✅ Send mobile to SheetDB
+              "Business Name": formData.businessName,
+              Message: formData.message,
+              Timestamp: new Date().toLocaleString()
+            }
+          ]
+        })
+      });
 
-   try {
-  const response = await fetch("https://sheetdb.io/api/v1/3gjyjczeopw10", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      data: [
-        {
-          Name: formData.name,
-          Email: formData.email,
-          "Business Name": formData.businessName,
-          Message: formData.message,
-          Timestamp: new Date().toLocaleString()
-        }
-      ]
-    })
-  });
+      const result = await response.json();
+      console.log("📌 SheetDB Response:", result);
 
-  const result = await response.json();  // 👈 capture response
-  console.log("📌 SheetDB Response:", result);
-
-  if (response.ok) {
-    setIsSubmitted(true);
-    setFormData({ name: "", email: "", businessName: "", message: "" });
-  } else {
-    console.error("❌ Submission failed:", result);
-    alert("Something went wrong while submitting. Please try again.");
-  }
-} catch (error) {
-  console.error("🔥 Fetch error:", error);
-  alert("Something went wrong while submitting. Please try again.");
-} finally {
-  setIsSubmitting(false);
-}
-};
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ name: "", email: "", mobile: "", businessName: "", message: "" });
+      } else {
+        console.error("❌ Submission failed:", result);
+        alert("Something went wrong while submitting. Please try again.");
+      }
+    } catch (error) {
+      console.error("🔥 Fetch error:", error);
+      alert("Something went wrong while submitting. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   if (isSubmitted) {
     return (
@@ -161,6 +118,22 @@ const ContactForm = () => {
         </div>
 
         <div>
+          <label htmlFor="mobile" className="block text-sm font-medium text-gray-300 mb-2">
+            Mobile Number *
+          </label>
+          <input
+            type="tel"
+            id="mobile"
+            name="mobile"
+            required
+            value={formData.mobile}
+            onChange={handleChange}
+            className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
+            placeholder="+91 9876543210"
+          />
+        </div>
+
+        <div>
           <label htmlFor="businessName" className="block text-sm font-medium text-gray-300 mb-2">
             Business Name
           </label>
@@ -177,7 +150,7 @@ const ContactForm = () => {
 
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-            What do you need help with? 
+            What do you need help with?
           </label>
           <textarea
             id="message"
@@ -191,23 +164,22 @@ const ContactForm = () => {
         </div>
 
         <button
-  type="submit"
-  disabled={isSubmitting}
-  className="w-full bg-white text-black font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center group"
->
-  {isSubmitting ? (
-    <div className="flex items-center">
-      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-black mr-2"></div>
-      Sending...
-    </div>
-  ) : (
-    <>
-      Send Message
-      <Send className="ml-2 h-5 w-5 text-black transition-transform duration-200 group-hover:translate-x-1" />
-    </>
-  )}
-</button>
-
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full bg-white text-black font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center group"
+        >
+          {isSubmitting ? (
+            <div className="flex items-center">
+              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-black mr-2"></div>
+              Sending...
+            </div>
+          ) : (
+            <>
+              Send Message
+              <Send className="ml-2 h-5 w-5 text-black transition-transform duration-200 group-hover:translate-x-1" />
+            </>
+          )}
+        </button>
       </form>
     </div>
   );
