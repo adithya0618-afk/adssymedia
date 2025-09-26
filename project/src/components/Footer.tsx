@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Zap, Instagram, Linkedin, Mail } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Zap, Instagram, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center space-x-2">
-                        {/* <img
+              {/* <img
                           src="/IMG-20250827-WA0016.png"
                           alt="ADSSY Media Logo"
                           className="h-8 w-8 object-contain rounded-xl"
@@ -18,12 +18,12 @@ const Footer = () => {
               {/* <div className="p-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg">
                 <Zap className="h-6 w-6 text-white" />
               </div> */}
-              <span className="text-xl font- text-white">
-                Adssy Media
-              </span>
+              <span className="text-xl font- text-white">Adssy Media</span>
             </Link>
             <p className="text-gray-400 text-sm max-w-md leading-relaxed">
-              Scaling brands with smarter ads and strategy. We help ambitious brands grow through paid advertising, performance marketing, and creative digital strategy.
+              Scaling brands with smarter ads and strategy. We help ambitious
+              brands grow through paid advertising, performance marketing, and
+              creative digital strategy.
             </p>
           </div>
 
@@ -31,16 +31,18 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              {['Home', 'About', 'Services', 'Portfolio', 'Contact'].map((item) => (
-                <li key={item}>
-                  <Link
-                    to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200 text-sm"
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              {["Home", "About", "Services", "Portfolio", "Contact"].map(
+                (item) => (
+                  <li key={item}>
+                    <Link
+                      to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                      className="text-gray-400 hover:text-blue-400 transition-colors duration-200 text-sm"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
@@ -78,6 +80,21 @@ const Footer = () => {
           <p className="text-gray-400 text-sm">
             © 2025 ADSSY MEDIA. All rights reserved. Built for ambitious brands.
           </p>
+          <div className="mt-2">
+            <Link
+              to="/privacy-policy"
+              className="text-gray-400 hover:text-blue-400 transition-colors duration-200 text-sm"
+            >
+              Privacy Policy
+            </Link>
+            {/* <span className="mx-2 text-gray-600">|</span>
+            <Link
+              to="/terms"
+              className="text-gray-400 hover:text-blue-400 transition-colors duration-200 text-sm"
+            >
+              Terms & Conditions
+            </Link> */}
+          </div>
         </div>
       </div>
     </footer>
